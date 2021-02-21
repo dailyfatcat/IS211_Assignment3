@@ -27,7 +27,7 @@ def processData(data):
     for row in data:
         lines = lines + 1
         """Search for Image Hits"""
-        if(re.match(r".*(.jpg|.gif|.png)$", row[0], re.IGNORECASE)):
+        if(re.search(r".*(.jpg|.gif|.png)$", row[0], re.IGNORECASE)):
             pictures = pictures + 1
         index = datetime.datetime.strptime(row[1], "%Y-%m-%d  %H:%M:%S")
         hours[index.hour] += 1
